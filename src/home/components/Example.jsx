@@ -6,7 +6,7 @@ import { IoClipboardOutline } from "react-icons/io5";
 import { IoCheckmark } from "react-icons/io5";
 
 
-const Example = () => {
+const Example = ({titre ,example}) => {
     const [copy , setCopy] = useState(false)
 
     const copyExample = () =>{
@@ -16,15 +16,7 @@ const Example = () => {
         setCopy(false)
       } , 2500)
     }
-    const codeString = `import React from 'react'
-
-    const HelloWord = () => {
-      return (
-        <div>HelloWord</div>
-      )
-    }
-    
-    export default HelloWord`;
+    const codeString = example;
   return (
     <div className='flex flex-col gap-y-5'>
         <h1 className='text-textColor text-2xl  font-extrabold'>Example</h1>
@@ -52,7 +44,7 @@ const Example = () => {
             width : "100%"
          }} 
          wrapLongLines = {true}
-         language="jsx" style={atomOneDark}>
+         language={titre.toLowerCase()} style={atomOneDark}>
             {codeString}
         </SyntaxHighlighter>
         </div>

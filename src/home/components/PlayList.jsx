@@ -11,7 +11,7 @@ import { BsFillPlayCircleFill } from "react-icons/bs";
 
 
 
-const Playlist = () => {
+const Playlist = ({playList}) => {
   const [playlistItems, setPlaylistItems] = useState([]);
   const [selectedVideo, setSelectedVideo] = useState(null);
   const [open, setOpen] = useState(false);
@@ -19,7 +19,7 @@ const Playlist = () => {
 
   useEffect(() => {
     const fetchPlaylist = async () => {
-      const items = await fetchPlaylistItems();
+      const items = await fetchPlaylistItems(playList);
       setPlaylistItems(items);
       if (items.length > 0) {
         setSelectedVideo(items[0]);

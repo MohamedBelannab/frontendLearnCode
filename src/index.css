@@ -16,8 +16,8 @@
   padding: 0;
   box-sizing: border-box;
   font-family: "Poppins", sans-serif;
-  /* color: var(--text-color); */
 }
+
 
 hr{
   box-sizing: content-box;
@@ -26,4 +26,12 @@ hr{
   margin: 2rem 0;
   border: 0;
   border-top: 1px solid rgba(0,0,0,.1);
+}
+
+nav.backdrop-saturate-200 {
+  border-radius: 0px !important;
+  background-color: #fff !important;
+  position: fixed !important;
+  top: 0;
+  z-index: 100;
 }

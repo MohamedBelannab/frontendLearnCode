@@ -13,10 +13,9 @@ export function VideoModal({open ,selectedVideo , setOpen , opts}) {
   return (
     <>
       <Dialog open={open} handler={()=>{setOpen(!open)}}>
-        <DialogHeader>Its a simple dialog.</DialogHeader>
         <DialogBody>
           <div>
-            <div className="video-player mt-4">
+            <div className="video-player  flex items-center justify-center">
               {selectedVideo && (
                 <YouTube videoId={selectedVideo.snippet.resourceId.videoId} opts={opts} />
               )}
@@ -31,9 +30,6 @@ export function VideoModal({open ,selectedVideo , setOpen , opts}) {
             className="mr-1"
           >
             <span>Cancel</span>
-          </Button>
-          <Button variant="gradient" color="green" onClick={()=>{setOpen(!open)}}>
-            <span>Confirm</span>
           </Button>
         </DialogFooter>
       </Dialog>

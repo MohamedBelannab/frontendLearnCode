@@ -2,9 +2,10 @@
 import axios from 'axios';
 
 const API_KEY = 'AIzaSyBC_KdLlgvg8CXl5D6mbwpo8KtXWvTBPrM';
-const PLAYLIST_ID = 'PLillGF-RfqbbJYRaNqeUzAb7QY-IqBKRx';
 
-const fetchPlaylistItems = async () => {
+
+const fetchPlaylistItems = async (playList) => {
+  const PLAYLIST_ID = playList;
   try {
     const response = await axios.get(
       `https://www.googleapis.com/youtube/v3/playlistItems`,

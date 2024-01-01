@@ -1,8 +1,25 @@
-import React from 'react'
 
+import React, { useEffect } from 'react' 
+import { getLanguages } from '../slices/langSlice'
+import { useDispatch , useSelector } from 'react-redux'
+import { Outlet } from 'react-router-dom'
+import  Navbar  from './layouts/Navbar'
+import { Footer } from './layouts/Footer'
 const Home = () => {
+  const dispatch = useDispatch()
+  const  {status} = useSelector(state => state.language)
+
+  useEffect(()=>{
+
+    if (status == 'idle') dispatch(getLanguages()) 
+
+  } , [])
   return (
-    <div className=' text-center w-full text-white  bg-black'>Home</div>
+    <>
+    <Outlet/>
+    <Footer/>
+    </>
+    
   )
 }
 
